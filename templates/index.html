@@ -8,12 +8,19 @@
 </head>
 <body class="flex flex-col justify-center items-center">
   <h1 class="text-3xl font-bold underline">{{.Heading}}</h1>
+  <div class="bg-red-500 text-white p-2">Test Tailwind</div>
 
   <div id="result"></div>
   <div class="flex p-3">
     <div class="flex flex-col justify-center p-3 m-3 border-solid border-2 rounded-lg">
-      <label for="Japanese Input" class="pb-3">Language Input: </label>
-      <textarea id="langInput" name="langInput" maxlength="2000" cols="80" rows="16" class="block p-2.5 w-full rounded-lg border focus:ring-yellow-250"></textarea>
+      <form
+        hx-post="/input-lang" 
+        hx-target="#langOutput"
+        hx-swap="innerHTML">
+        <label for="langInput" class="pb-3">Language Input: </label>
+        <textarea id="langInput" name="langInput" maxlength="2000" cols="80" rows="16" class="mb-3 block p-2.5 w-full rounded-lg border focus:ring-yellow-250"></textarea>
+        <button type="submit" class="rounded-lg border hover:bg-sky-700">Analyze</button>
+      </form>
     </div>
     <div class="flex flex-col justify-center p-3 m-3 border-solid border-2 rounded-lg">
       <label for="Japanese Output" class="pb-3">Language Output: </label>
