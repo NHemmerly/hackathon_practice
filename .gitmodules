@@ -1,0 +1,3 @@
+[submodule "nihongo-tokenizer"]
+	path = nihongo-tokenizer
+	url = https://github.com/NHemmerly/nihongo-tokenizer
