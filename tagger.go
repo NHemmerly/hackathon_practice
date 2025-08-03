@@ -15,7 +15,7 @@ type tokens []struct {
 }
 
 func tagInput(inputText string) (*tokens, error) {
-	cmd := exec.Command("docker", "run", "neilhemm9:nihongo-tokenizer",
+	cmd := exec.Command("docker", "run", "neilhemm9/nihongo-tokenizer",
 		"--pickle_name", "jlpt_all.pkl",
 		"--inputText", inputText)
 	japanese_tokens, err := cmd.Output()
